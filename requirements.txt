@@ -1,0 +1,4 @@
+opencv
+tqdm
+fonttools
+numpy

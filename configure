@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -x "$(command -v git)" ]; then
+    git clone https://github.com/google/fonts.git
+fi
+
+mv conv.py fonts/
+mv fonts-lists.txt fonts/
