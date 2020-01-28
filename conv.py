@@ -100,7 +100,7 @@ def main() -> None:
     # for i in res:
     #     print(i.result())
 
-    for fname in tqdm(fonts[:20]):
+    for fname in tqdm(fonts):
         make_font(fname)
 
 
