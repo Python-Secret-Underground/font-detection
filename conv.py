@@ -79,7 +79,6 @@ def make_font(fname: str) -> None:
 
     cv2.imwrite(face + '_out.png', out)
     os.chdir('../../')
-    return fname
 
 
 def main() -> None:
@@ -88,11 +87,6 @@ def main() -> None:
 
     fonts = [line.rstrip('\n') for line in open('fonts-list.txt')]
 
-    # with concurrent.futures.ThreadPoolExecutor() as executor:
-    #     res = [executor.submit(make_font, fname) for fname in fonts[:3]]
-
-    # for i in res:
-    #     print(i.result())
     try:
         os.mkdir('build')
         os.chdir('build')
@@ -100,7 +94,13 @@ def main() -> None:
         print('Please remove build/ directory')
         sys.exit(1)
 
-    for fname in tqdm(fonts):
+    # with concurrent.futures.ProcessPoolExecutor() as executor:
+    #     res = [executor.submit(make_font, fname) for fname in fonts[:20]]
+
+    # for i in res:
+    #     print(i.result())
+
+    for fname in tqdm(fonts[:20]):
         make_font(fname)
 
 
