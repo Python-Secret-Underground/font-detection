@@ -100,7 +100,7 @@ def main() -> None:
         print('Please remove build/ directory')
         sys.exit(1)
 
-    for fname in tqdm(fonts[:3]):
+    for fname in tqdm(fonts):
         make_font(fname)
 
 
